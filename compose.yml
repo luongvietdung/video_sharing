@@ -25,6 +25,11 @@ services:
     volumes:
       - ./backend:/workspace
     env_file: .env.local
+    depends_on:
+      - redis
+      - db
+    ports:
+      - 3000:3000
   frontend:
     tty: true
     platform: linux/x86_64
@@ -34,6 +39,10 @@ services:
     volumes:
       - ./frontend:/workspace
     env_file: .env.local
+    depends_on:
+      - backend
+    ports:
+      - 9000:9000
 volumes:
   postgres-data:
   redis-data:
