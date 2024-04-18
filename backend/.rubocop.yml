@@ -12,6 +12,8 @@ Style:
   Enabled: false
 Naming/AccessorMethodName:
   Enabled: false
+Bundler/OrderedGems:
+  Enabled: false
 Rails/I18nLocaleTexts:
   Enabled: false
 RSpec/MultipleMemoizedHelpers:
