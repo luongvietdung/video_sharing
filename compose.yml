@@ -1,0 +1,39 @@
+name: luongvietdung_youtube_video_sharing
+services:
+  redis:
+    image: redis
+    ports:
+      - "6384:6379"
+    volumes:
+      - redis-data:/data
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-sharing_video}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      PGDATA: /data/postgres
+    volumes:
+       - postgres-data:/data/postgres
+    ports:
+      - "5432:5432"
+  backend:
+    tty: true
+    platform: linux/x86_64
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile.ruby
+    volumes:
+      - ./backend:/workspace
+    env_file: .env.local
+  frontend:
+    tty: true
+    platform: linux/x86_64
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile.node20
+    volumes:
+      - ./frontend:/workspace
+    env_file: .env.local
+volumes:
+  postgres-data:
+  redis-data:
