@@ -5,7 +5,7 @@ class VideosController < AuthController
 
   def index
     videos = Video.includes(:votes)
-    render json: VideoSerializer.new(videos, {params: {current_user: current_user}}), status: :ok
+    render json: IndexVideoSerializer.new(videos, {params: {current_user: current_user}}), status: :ok
   end
 
   def create
