@@ -44,13 +44,15 @@ services:
     build:
       context: .
       dockerfile: .docker/Dockerfile.node20
-    # command: bash -c 'yarn install && yarn dev -p 9000'
+    # command: bash -c 'npm install && yarn dev -p 9000'
     volumes:
       - ./frontend:/workspace
     depends_on:
       - backend
     ports:
       - 9000:9000
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 volumes:
   postgres-data:
   redis-data:

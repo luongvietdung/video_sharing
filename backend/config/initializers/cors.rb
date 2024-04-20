@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "video-sharing-blush.vercel.app"
+    origins "https://video-sharing-blush.vercel.app", "http://localhost:9000"
 
     resource "*",
       headers: :any,
