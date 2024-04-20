@@ -22,9 +22,14 @@ services:
     build:
       context: .
       dockerfile: .docker/Dockerfile.ruby
+    command: bash -c 'bin/setup && bin/rails db:seed && bin/rails s -b 0.0.0.0'
     volumes:
       - ./backend:/workspace
-    env_file: .env.local
+    environment:
+      RAILS_MASTER_KEY: 735e75481d3c15f7e562f01a11bf1075
+      POSTGRES_USER: ${POSTGRES_USER:-sharing_video}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      REDIS_URL: redis://redis:6379/1
     depends_on:
       - redis
       - db
@@ -36,9 +41,9 @@ services:
     build:
       context: .
       dockerfile: .docker/Dockerfile.node20
+    command: bash -c 'yarn install && yarn build && yarn start -p 9000'
     volumes:
       - ./frontend:/workspace
-    env_file: .env.local
     depends_on:
       - backend
     ports:
