@@ -11,11 +11,26 @@
 
 # Seed users
 
+puts "== 20240420030917 CreateUsers ======================================"
 DEFAULT_PASSWORD = "12345678"
-
 (1..100).each do |i|
   User.find_or_create_by!(email: "seed-user#{i}@example.com") do |u|
     u.password = DEFAULT_PASSWORD
     u.password_confirmation = DEFAULT_PASSWORD
+  end
+end
+
+# Seed Video
+
+puts "== 20240420030917 CreateVideos ======================================"
+urls = [
+  'https://www.youtube.com/watch?v=4e-yGcFb_mU',
+  'https://www.youtube.com/watch?v=LpLNXd-ubc8'
+]
+
+urls.each.with_index(1) do |url, index|
+  Video.find_or_create_by!(src: url) do |v|
+    v.title = "Seed Title #{index}"
+    v.description = "Seed Description #{index}"
   end
 end

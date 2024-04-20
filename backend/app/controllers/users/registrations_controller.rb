@@ -21,7 +21,7 @@ class Users::RegistrationsController < ApplicationController
     render json: {
       message: 'Signed up successfully',
       user: @user.as_json.slice("email")
-    }, status: :ok
+    }, status: :created
   end
 
   def render_failure
