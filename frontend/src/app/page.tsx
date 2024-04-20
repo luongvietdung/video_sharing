@@ -1,6 +1,6 @@
 'use client'
 import VideoList from '@/components/VideoList';
-import { FetchRapiApi } from '@/utils/fetchApi';
+import { FetchRapiApi, FetchApi } from '@/utils/fetchApi';
 import React, { useEffect, useState } from 'react'
 
 const Home: React.FC = () => {
@@ -11,6 +11,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const data2 = await FetchApi('')
         const data = await FetchRapiApi(`search?part=snippet&q=${selectedCategory}`);
         setVideo(data.items);
       } catch (error) {

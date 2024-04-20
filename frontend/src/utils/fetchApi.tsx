@@ -17,3 +17,8 @@ export const FetchRapiApi = async (url: string) => {
   const { data } = await axios.get(`${BASE_URL}/${url}`, options);
   return data;
 };
+
+export const FetchApi = async (url: string) => {
+  const { data } = await axios.get(`http://localhost:3000/videos`);
+  return data;
+};
