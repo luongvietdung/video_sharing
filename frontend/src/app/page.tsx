@@ -1,6 +1,6 @@
 'use client'
 import VideoList from '@/components/VideoList';
-import { FetchRapiApi } from '@/utils/fetchRapiApi';
+import { FetchRapiApi } from '@/utils/fetchApi';
 import React, { useEffect, useState } from 'react'
 
 const Home: React.FC = () => {
