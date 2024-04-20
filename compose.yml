@@ -42,7 +42,7 @@ services:
     build:
       context: .
       dockerfile: .docker/Dockerfile.node20
-    command: bash -c 'yarn install && yarn dev -p 9000'
+    # command: bash -c 'yarn install && yarn dev -p 9000'
     volumes:
       - ./frontend:/workspace
     depends_on:
