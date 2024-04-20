@@ -34,3 +34,11 @@ urls.each.with_index(1) do |url, index|
     v.description = "Seed Description #{index}"
   end
 end
+
+
+# Seed Vote
+puts "== 20240420120433 CreateVotes ======================================"
+video = Video.first
+users = User.first(50).each do |u|
+  Vote.find_or_create_by!(video_id: video.id, user_id: u.id)
+end
