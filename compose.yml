@@ -28,8 +28,10 @@ services:
       - bundle_path:/usr/local/bundle
     environment:
       RAILS_MASTER_KEY: 735e75481d3c15f7e562f01a11bf1075
-      POSTGRES_USER: ${POSTGRES_USER:-sharing_video}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      DB_USER: ${DB_USER:-sharing_video}
+      DB_PASSWORD: ${DB_PASSWORD:-password}
+      DB_PORT: 5432
+      DB_HOST: db
       REDIS_URL: redis://redis:6379/1
     depends_on:
       - redis
