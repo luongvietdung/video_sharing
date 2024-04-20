@@ -11,6 +11,7 @@ class VideosController < AuthController
   def create
     video = Video.new(video_params)
     if video.save
+      NotificationShareVideoJob.perform_later(current_user, video)
       render json: VideoSerializer.new(video), status: :created
     else
       render json: { message: video.errors.full_messages }, status: :unprocessable_entity
