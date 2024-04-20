@@ -25,6 +25,7 @@ services:
     command: bash -c 'bin/setup && bin/rails db:seed && bin/rails s -b 0.0.0.0'
     volumes:
       - ./backend:/workspace
+      - bundle_path:/usr/local/bundle
     environment:
       RAILS_MASTER_KEY: 735e75481d3c15f7e562f01a11bf1075
       POSTGRES_USER: ${POSTGRES_USER:-sharing_video}
@@ -41,7 +42,7 @@ services:
     build:
       context: .
       dockerfile: .docker/Dockerfile.node20
-    command: bash -c 'yarn install && yarn build && yarn start -p 9000'
+    command: bash -c 'yarn install && yarn dev -p 9000'
     volumes:
       - ./frontend:/workspace
     depends_on:
@@ -51,3 +52,4 @@ services:
 volumes:
   postgres-data:
   redis-data:
+  bundle_path:
