@@ -13,9 +13,7 @@ class Users::SessionsController < Devise::SessionsController
 
   def respond_with(resource, _opts = {})
     if resource
-      render json: {
-        user: resource.as_json.slice("email")
-      }, status: :ok
+      render json: UserSerializer.new(@user), status: :ok
     else
       render json: {
         message: "Invalid Email or Password.",
