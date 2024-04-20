@@ -13,4 +13,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   post 'signup', to: 'users/registrations#create', defaults: { format: :json }
+
+  resources :videos, only: [:create, :index]
+  resource :user, only: :show, path: "current_user"
 end

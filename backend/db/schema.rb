@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_20_092944) do
   create_table "jwt_denies", force: :cascade do |t|
     t.string "jti", null: false
     t.datetime "exp", null: false
-    t.index ["jti"], name: "index_jwt_denies_on_jti", unique: true
+    t.index ["jti"], name: "index_jwt_denies_on_jti"
   end
 
   create_table "users", force: :cascade do |t|
