@@ -7,3 +7,15 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+# Seed users
+
+DEFAULT_PASSWORD = "12345678"
+
+(1..100).each do |i|
+  User.find_or_create_by!(email: "seed-user#{i}@example.com") do |u|
+    u.password = DEFAULT_PASSWORD
+    u.password_confirmation = DEFAULT_PASSWORD
+  end
+end
