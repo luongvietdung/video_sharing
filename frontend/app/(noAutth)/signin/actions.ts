@@ -1,6 +1,6 @@
 "use server";
-
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 
 export interface FormState {
   message: string;
@@ -29,11 +29,18 @@ export default async function postSignIn(
     },
     body: JSON.stringify(submitParams),
   });
+  const state = await res.json();
 
   if (res?.ok) {
+    cookies().set({
+      name: "AccessToken",
+      value: state.data.access_token,
+      httpOnly: true,
+      secure: process.env.NODE_ENV == "production",
+      path: "/",
+    });
     redirect("/");
   } else {
-    const data = await res.json();
-    return data;
+    return state;
   }
 }
