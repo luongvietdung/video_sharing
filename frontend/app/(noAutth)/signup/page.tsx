@@ -1,12 +1,6 @@
 /* eslint-disable tailwindcss/classnames-order */
-import {
-  DarkThemeToggle,
-  Alert,
-  Button,
-  Checkbox,
-  Label,
-  TextInput,
-} from "flowbite-react";
+import { SubmitButton } from "@/app/(noAutth)/submit-button";
+import { DarkThemeToggle, Alert, Label, TextInput } from "flowbite-react";
 import Link from "next/link";
 
 export default function SignInPage() {
@@ -59,12 +53,7 @@ export default function SignInPage() {
               shadow
             />
           </div>
-          <Button
-            type="submit"
-            className="bg-primary-600 hover:bg-primary-700 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 w-full rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none focus:ring-4"
-          >
-            Register new account
-          </Button>
+          <SubmitButton>Register new account</SubmitButton>
           <p className="text-sm font-light text-gray-500 dark:text-gray-400">
             You have already account yet?{" "}
             <Link

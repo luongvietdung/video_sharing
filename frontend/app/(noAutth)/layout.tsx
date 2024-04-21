@@ -1,11 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function NoAuthLayout({
-  children, // will be a page or nested layout
-}: {
+  children,
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <>
       <section className="bg-gray-50 dark:bg-gray-900">
