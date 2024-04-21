@@ -3,8 +3,8 @@
 import { SidebarProvider, useSidebarContext } from "@/context/SidebarContext";
 import type { FC, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
-import { DashboardNavbar } from "./navbar";
-import { DashboardSidebar } from "./sidebar";
+import { Header } from "./header";
+import { Menu } from "./menu";
 
 const DashboardLayout: FC<PropsWithChildren> = function ({ children }) {
   return (
@@ -19,9 +19,9 @@ const DashboardLayoutContent: FC<PropsWithChildren> = function ({ children }) {
 
   return (
     <>
-      <DashboardNavbar />
+      <Header />
       <div className="mt-16 flex items-start">
-        <DashboardSidebar />
+        <Menu />
         <div
           id="main-content"
           className={twMerge(

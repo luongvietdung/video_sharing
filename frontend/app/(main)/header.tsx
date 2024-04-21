@@ -5,7 +5,7 @@ import Image from "next/image";
 import type { FC } from "react";
 import { HiMenuAlt1, HiX } from "react-icons/hi";
 
-export const DashboardNavbar: FC<Record<string, never>> = function () {
+export const Header: FC<Record<string, never>> = function () {
   const { isCollapsed: isSidebarCollapsed, setCollapsed: setSidebarCollapsed } =
     useSidebarContext();
 
