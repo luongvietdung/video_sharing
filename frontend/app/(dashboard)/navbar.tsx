@@ -32,7 +32,7 @@ export const DashboardNavbar: FC<Record<string, never>> = function () {
               </button>
               <Navbar.Brand href="/">
                 <Image
-                  alt="Flowbite logo"
+                  alt="Metube logo"
                   height="24"
                   src="/favicon.png"
                   width="24"
