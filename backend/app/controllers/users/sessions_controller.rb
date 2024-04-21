@@ -13,7 +13,11 @@ class Users::SessionsController < Devise::SessionsController
 
   def respond_with(resource, _opts = {})
     if resource
-      render json: UserSerializer.new(@user), status: :ok
+      render json: {
+        data: {
+          access_token: request.env['warden-jwt_auth.token']
+        }
+      }, status: :ok
     else
       render json: {
         message: "Invalid Email or Password.",
