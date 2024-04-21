@@ -1,11 +1,10 @@
-import type { Metadata } from "next";
 import { Flowbite, ThemeModeScript } from "flowbite-react";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { type FC, type PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 import "./globals.css";
 import { flowbiteTheme } from "./theme";
-
 
 export const metadata: Metadata = {
   title: "Youtube Sharing Video",

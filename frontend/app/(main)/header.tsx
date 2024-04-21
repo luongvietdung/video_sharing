@@ -34,7 +34,7 @@ export const Header: FC<Record<string, never>> = function () {
                 <Image
                   alt="Metube logo"
                   height="24"
-                  src="/favicon.png"
+                  src="/logo.png"
                   width="24"
                 />
                 <span className="self-center whitespace-nowrap px-3 text-xl font-semibold dark:text-white">

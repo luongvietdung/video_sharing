@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { Button, Checkbox, Label, TextInput } from "flowbite-react";
+import { Button, Label, TextInput } from "flowbite-react";
 
 export default function ShareVideoPage() {
   return (
@@ -12,12 +12,17 @@ export default function ShareVideoPage() {
           </h1>
         </header>
       </section>
-        <form className="flex max-w-md flex-col gap-4">
+      <form className="flex max-w-md flex-col gap-4">
         <div>
           <div className="mb-2 block">
             <Label htmlFor="url" value="Your URL" />
           </div>
-          <TextInput id="url" type="url" placeholder="https://www.youtube.com/watch?v=aWl6dqxL5XM" required />
+          <TextInput
+            id="url"
+            type="url"
+            placeholder="https://www.youtube.com/watch?v=aWl6dqxL5XM"
+            required
+          />
         </div>
         <Button type="submit">Submit</Button>
       </form>

@@ -1,13 +1,7 @@
 import { useSidebarContext } from "@/context/SidebarContext";
 import { Sidebar } from "flowbite-react";
 import type { FC } from "react";
-import {
-  HiUserAdd,
-  HiHome,
-  HiLogout,
-  HiLogin,
-  HiShare
-} from "react-icons/hi";
+import { HiHome, HiLogin, HiLogout, HiShare, HiUserAdd } from "react-icons/hi";
 import { twMerge } from "tailwind-merge";
 
 export const Menu: FC = function () {
