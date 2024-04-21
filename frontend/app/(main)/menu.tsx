@@ -1,16 +1,10 @@
 import { useSidebarContext } from "@/context/SidebarContext";
 import { Sidebar } from "flowbite-react";
 import type { FC } from "react";
-import { BiBuoy } from "react-icons/bi";
-import {
-  HiUserAdd,
-  HiHome,
-  HiLogout,
-  HiLogin
-} from "react-icons/hi";
+import { HiHome, HiLogin, HiLogout, HiShare, HiUserAdd } from "react-icons/hi";
 import { twMerge } from "tailwind-merge";
 
-export const DashboardSidebar: FC = function () {
+export const Menu: FC = function () {
   const { isCollapsed } = useSidebarContext();
 
   return (
@@ -33,6 +27,9 @@ export const DashboardSidebar: FC = function () {
           </Sidebar.Item>
           <Sidebar.Item href="/signin" icon={HiLogin}>
             Sign In
+          </Sidebar.Item>
+          <Sidebar.Item href="/share-video" icon={HiShare}>
+            Share Video URL
           </Sidebar.Item>
         </Sidebar.ItemGroup>
         <Sidebar.ItemGroup>
