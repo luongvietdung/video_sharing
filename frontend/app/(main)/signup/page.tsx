@@ -1,6 +1,7 @@
 "use client";
 
 import { Button, Label, TextInput } from "flowbite-react";
+import { postSignUp } from 
 
 export default function SignUpPage() {
   return (
@@ -36,7 +37,7 @@ export default function SignUpPage() {
           </div>
           <TextInput id="connfirmPassword" type="password" required />
         </div>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" onClick={postSignUp}>Submit</Button>
       </form>
     </div>
   );
