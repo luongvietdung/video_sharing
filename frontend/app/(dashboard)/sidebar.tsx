@@ -3,13 +3,10 @@ import { Sidebar } from "flowbite-react";
 import type { FC } from "react";
 import { BiBuoy } from "react-icons/bi";
 import {
-  HiArrowSmRight,
-  HiChartPie,
-  HiInbox,
-  HiShoppingBag,
-  HiTable,
-  HiUser,
-  HiViewBoards,
+  HiUserAdd,
+  HiHome,
+  HiLogout,
+  HiLogin
 } from "react-icons/hi";
 import { twMerge } from "tailwind-merge";
 
@@ -18,7 +15,7 @@ export const DashboardSidebar: FC = function () {
 
   return (
     <Sidebar
-      aria-label="Sidebar with multi-level dropdown example"
+      aria-label="Sidebar menu"
       collapsed={isCollapsed}
       id="sidebar"
       className={twMerge(
@@ -28,37 +25,19 @@ export const DashboardSidebar: FC = function () {
     >
       <Sidebar.Items>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="#" icon={HiChartPie}>
-            Dashboard
+          <Sidebar.Item href="/" icon={HiHome}>
+            Homepage
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiViewBoards}>
-            Kanban
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiInbox}>
-            Inbox
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiUser}>
-            Users
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiShoppingBag}>
-            Products
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiArrowSmRight}>
-            Sign In
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiTable}>
+          <Sidebar.Item href="/signup" icon={HiUserAdd}>
             Sign Up
+          </Sidebar.Item>
+          <Sidebar.Item href="/signin" icon={HiLogin}>
+            Sign In
           </Sidebar.Item>
         </Sidebar.ItemGroup>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="#" icon={HiChartPie}>
-            Upgrade to Pro
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiViewBoards}>
-            Documentation
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={BiBuoy}>
-            Help
+          <Sidebar.Item href="/signout" icon={HiLogout}>
+            Sign Out
           </Sidebar.Item>
         </Sidebar.ItemGroup>
       </Sidebar.Items>
