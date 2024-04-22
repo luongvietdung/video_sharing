@@ -58,7 +58,6 @@
 ## Brief:
 - You can switch between Sign In or Sign Up pages
 - You can sign up without confirm your email address
-- Home page list all of sharing videos at once
 
 # Further improvement - future features:
 1. Paginate - Infinity scroll
