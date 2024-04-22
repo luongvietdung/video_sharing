@@ -22,7 +22,7 @@ services:
     build:
       context: .
       dockerfile: .docker/Dockerfile.ruby
-    # command: bash -c 'bin/setup && bin/rails db:seed && bin/rails s -b 0.0.0.0'
+    command: bash -c 'rm -rf tmp/pids/server.pid && bin/setup && bin/rails db:seed && bin/rails s -b 0.0.0.0'
     volumes:
       - ./backend:/workspace
       - bundle_path:/usr/local/bundle
@@ -44,7 +44,7 @@ services:
     build:
       context: .
       dockerfile: .docker/Dockerfile.node20
-    # command: bash -c 'npm install && yarn dev -p 9000'
+    command: bash -c 'npm install && PORT=9000 npm run dev'
     volumes:
       - ./frontend:/workspace
     depends_on:
