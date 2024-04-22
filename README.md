@@ -4,6 +4,7 @@
 2. [Local Development](#local-development)
 3. [Docker Development](#docker-development)
 4. [How to run test](#how-to-run-test)
+5. [Backend API](#backend-API)
 
 # Features:
 1. Sign in/ Sign up
@@ -63,3 +64,14 @@
 1. Paginate - Infinity scroll
 2. Like/Unlike
 3. User's sharing videos
+
+# Backend API
+- BASE_URL: https://video-sharing-sqba.onrender.com
+- API lists:
+  - Signin: POST `/signin`
+  - Signup: POST `/signup`
+  - Signout: DELETE `/signout`
+  - Share Video: POST `/videos`
+  - List Videos: GET `/videos`
+  - Vote a video: POST `/videos/{video_id}/vote`
+  - Get Current user: GET `/current_user`
