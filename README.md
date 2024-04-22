@@ -21,7 +21,7 @@
 1. Ruby >= 3.2.2
 2. Rails >= 7.0.4.3
 3. Node >= 18.15.0
-4. Yarn >= 1.22.19
+4. NextJS >= 14
 5. Postgresql >= 14.7
 
 ## Scripts:
