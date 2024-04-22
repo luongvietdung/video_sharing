@@ -18,9 +18,9 @@
 2. [Scripts](#scripts)
 
 ## Prerequisites:
-1. Ruby >= 3.2.2
-2. Rails >= 7.0.4.3
-3. Node >= 18.15.0
+1. Ruby >= 3.3.0
+2. Rails >= 7.1.3.2
+3. Node >= 20
 4. NextJS >= 14
 5. Postgresql >= 14.7
 
